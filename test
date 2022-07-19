@@ -1,0 +1,641 @@
+Build started
+git clone -q --branch=%APPVEYOR_REPO_BRANCH% https://github.com/%APPVEYOR_REPO_NAME%.git %APPVEYOR_BUILD_FOLDER%
+cd %APPVEYOR_BUILD_FOLDER%
+git checkout -qf %APPVEYOR_REPO_COMMIT%
+git submodule update --init --recursive
+Submodule 'dependencies/glm' (https://github.com/g-truc/glm) registered for path 'dependencies/glm'
+Submodule 'dependencies/imgui' (https://github.com/ocornut/imgui.git) registered for path 'dependencies/imgui'
+Submodule 'dependencies/minhook' (https://github.com/TsudaKageyu/minhook.git) registered for path 'dependencies/minhook'
+Submodule 'dependencies/spdlog' (https://github.com/gabime/spdlog.git) registered for path 'dependencies/spdlog'
+Cloning into 'C:/projects/reframework-dev/dependencies/glm'...
+Cloning into 'C:/projects/reframework-dev/dependencies/imgui'...
+Cloning into 'C:/projects/reframework-dev/dependencies/minhook'...
+Cloning into 'C:/projects/reframework-dev/dependencies/spdlog'...
+Submodule path 'dependencies/glm': checked out 'bf71a834948186f4097caa076cd2663c69a10e1e'
+Submodule path 'dependencies/imgui': checked out '35b1148efb839381b84de9290d9caf0b66ad7d03'
+Submodule path 'dependencies/minhook': checked out '423d1e45af2ed2719a5c31e990e935ef301ed9c3'
+Submodule path 'dependencies/spdlog': checked out '100f30043f33277122e0991c83845a2617172ffd'
+cd %APPVEYOR_BUILD_FOLDER%
+git submodule update --init --recursive
+cmake -B build -G "Visual Studio 16 2019" -A x64 -DDEVELOPER_MODE=ON -DCMAKE_SYSTEM_VERSION=10.0.18362.0
+-- [cmkr] Skipping automatic cmkr generation
+-- The C compiler identification is MSVC 19.29.30139.0
+-- The CXX compiler identification is MSVC 19.29.30139.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Fetching asmjit (2a706fd2ba355808cada31ac1eed8ce28caa6b37)...
+** AsmJit Summary **
+   ASMJIT_DIR=C:/projects/reframework-dev/build/_deps/asmjit-src
+   ASMJIT_TEST=FALSE
+   ASMJIT_TARGET_TYPE=STATIC
+   ASMJIT_DEPS=
+   ASMJIT_LIBS=asmjit
+   ASMJIT_CFLAGS=-DASMJIT_STATIC
+   ASMJIT_PRIVATE_CFLAGS=-MP;-GF;-Zc:inline;-Zc:strictStrings;-Zc:threadSafeInit-;-W4;-DASMJIT_STATIC
+   ASMJIT_PRIVATE_CFLAGS_DBG=-GS
+   ASMJIT_PRIVATE_CFLAGS_REL=-GS-;-O2;-Oi
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/projects/reframework-dev/build
+cmake --build build --config Release
+Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+  Checking Build System
+  Building Custom Rule C:/projects/reframework-dev/build/_deps/asmjit-src/CMakeLists.txt
+  archtraits.cpp
+  assembler.cpp
+  builder.cpp
+  codeholder.cpp
+  codewriter.cpp
+  compiler.cpp
+  constpool.cpp
+  cpuinfo.cpp
+  emithelper.cpp
+  emitter.cpp
+  emitterutils.cpp
+  environment.cpp
+  errorhandler.cpp
+  formatter.cpp
+  func.cpp
+  funcargscontext.cpp
+  globals.cpp
+  inst.cpp
+  jitallocator.cpp
+  jitruntime.cpp
+  logger.cpp
+  operand.cpp
+  osutils.cpp
+  ralocal.cpp
+  rapass.cpp
+  rastack.cpp
+  string.cpp
+  support.cpp
+  target.cpp
+  type.cpp
+  virtmem.cpp
+  zone.cpp
+  zonehash.cpp
+  zonelist.cpp
+  zonestack.cpp
+  zonetree.cpp
+  zonevector.cpp
+  x86assembler.cpp
+  x86builder.cpp
+  x86compiler.cpp
+  x86emithelper.cpp
+  x86formatter.cpp
+  x86func.cpp
+  x86instdb.cpp
+  x86instapi.cpp
+  x86operand.cpp
+  x86rapass.cpp
+  asmjit.vcxproj -> C:\projects\reframework-dev\build\_deps\asmjit-build\Release\asmjit.lib
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  glm.cpp
+  glm_static.vcxproj -> C:\projects\reframework-dev\build\Release\glm_static.lib
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  imgui.vcxproj -> C:\projects\reframework-dev\build\Release\imgui.lib
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  lapi.c
+  lauxlib.c
+  lbaselib.c
+  lcode.c
+  lcorolib.c
+  lctype.c
+  ldblib.c
+  ldebug.c
+  ldo.c
+  ldump.c
+  lfunc.c
+  lgc.c
+  linit.c
+  liolib.c
+  llex.c
+  lmathlib.c
+  lmem.c
+  loadlib.c
+  lobject.c
+  lopcodes.c
+  Generating Code...
+  Compiling...
+  loslib.c
+  lparser.c
+  lstate.c
+  lstring.c
+  lstrlib.c
+  ltable.c
+  ltablib.c
+  ltm.c
+  lundump.c
+  lutf8lib.c
+  lvm.c
+  lzio.c
+  Generating Code...
+  lua.vcxproj -> C:\projects\reframework-dev\build\Release\lua.lib
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  buffer.c
+  hde32.c
+  hde64.c
+  hook.c
+  trampoline.c
+  Generating Code...
+  minhook.vcxproj -> C:\projects\reframework-dev\build\Release\minhook.lib
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  async.cpp
+  cfg.cpp
+  color_sinks.cpp
+  file_sinks.cpp
+  fmt.cpp
+  spdlog.cpp
+  stdout_sinks.cpp
+  spdlog.vcxproj -> C:\projects\reframework-dev\build\Release\spdlog.lib
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  D3D11Hook.cpp
+  D3D12Hook.cpp
+  DInputHook.cpp
+  ExceptionHandler.cpp
+  HookManager.cpp
+  Main.cpp
+  Mods.cpp
+  REFramework.cpp
+  WindowsMessageHook.cpp
+  APIProxy.cpp
+  Camera.cpp
+  DeveloperTools.cpp
+  FirstPerson.cpp
+  FreeCam.cpp
+  Hooks.cpp
+  IntegrityCheckBypass.cpp
+  ManualFlashlight.cpp
+  PluginLoader.cpp
+  REFrameworkConfig.cpp
+  Scene.cpp
+  ScriptRunner.cpp
+  VR.cpp
+  FS.cpp
+  ImGui.cpp
+  Json.cpp
+  Sdk.cpp
+  GameObjectsDisplay.cpp
+  ObjectExplorer.cpp
+  Bindings.cpp
+  D3D11Component.cpp
+  D3D12Component.cpp
+  OverlayComponent.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_win32.cpp
+  Application.cpp
+  MurmurHash.cpp
+  REContext.cpp
+  REGlobals.cpp
+  REManagedObject.cpp
+  RETransform.cpp
+  REType.cpp
+  RETypeDB.cpp
+  RETypeDefinition.cpp
+  RETypes.cpp
+  Renderer.cpp
+  ResourceManager.cpp
+  SceneManager.cpp
+  SystemArray.cpp
+  NativeObject.cpp
+  Address.cpp
+  Config.cpp
+  FunctionHook.cpp
+  Memory.cpp
+  Module.cpp
+  Patch.cpp
+  Pattern.cpp
+  PointerHook.cpp
+  Scan.cpp
+  String.cpp
+  Thread.cpp
+     Creating library C:/projects/reframework-dev/build/lib/DMC5/dinput8.lib and object C:/projects/reframework-dev/build/lib/DMC5/dinput8.exp
+  DMC5.vcxproj -> C:\projects\reframework-dev\build\bin\DMC5\dinput8.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  D3D11Hook.cpp
+  D3D12Hook.cpp
+  DInputHook.cpp
+  ExceptionHandler.cpp
+  HookManager.cpp
+  Main.cpp
+  Mods.cpp
+  REFramework.cpp
+  WindowsMessageHook.cpp
+  APIProxy.cpp
+  Camera.cpp
+  DeveloperTools.cpp
+  FirstPerson.cpp
+  FreeCam.cpp
+  Hooks.cpp
+  IntegrityCheckBypass.cpp
+  ManualFlashlight.cpp
+  PluginLoader.cpp
+  REFrameworkConfig.cpp
+  Scene.cpp
+  ScriptRunner.cpp
+  VR.cpp
+  FS.cpp
+  ImGui.cpp
+  Json.cpp
+  Sdk.cpp
+  GameObjectsDisplay.cpp
+  ObjectExplorer.cpp
+  Bindings.cpp
+  D3D11Component.cpp
+  D3D12Component.cpp
+  OverlayComponent.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_win32.cpp
+  Application.cpp
+  MurmurHash.cpp
+  REContext.cpp
+  REGlobals.cpp
+  REManagedObject.cpp
+  RETransform.cpp
+  REType.cpp
+  RETypeDB.cpp
+  RETypeDefinition.cpp
+  RETypes.cpp
+  Renderer.cpp
+  ResourceManager.cpp
+  SceneManager.cpp
+  SystemArray.cpp
+  NativeObject.cpp
+  Address.cpp
+  Config.cpp
+  FunctionHook.cpp
+  Memory.cpp
+  Module.cpp
+  Patch.cpp
+  Pattern.cpp
+  PointerHook.cpp
+  Scan.cpp
+  String.cpp
+  Thread.cpp
+     Creating library C:/projects/reframework-dev/build/lib/MHRISE/dinput8.lib and object C:/projects/reframework-dev/build/lib/MHRISE/dinput8.exp
+  MHRISE.vcxproj -> C:\projects\reframework-dev\build\bin\MHRISE\dinput8.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  D3D11Hook.cpp
+  D3D12Hook.cpp
+  DInputHook.cpp
+  ExceptionHandler.cpp
+  HookManager.cpp
+  Main.cpp
+  Mods.cpp
+  REFramework.cpp
+  WindowsMessageHook.cpp
+  APIProxy.cpp
+  Camera.cpp
+  DeveloperTools.cpp
+  FirstPerson.cpp
+  FreeCam.cpp
+  Hooks.cpp
+  IntegrityCheckBypass.cpp
+  ManualFlashlight.cpp
+  PluginLoader.cpp
+  REFrameworkConfig.cpp
+  Scene.cpp
+  ScriptRunner.cpp
+  VR.cpp
+  FS.cpp
+  ImGui.cpp
+  Json.cpp
+  Sdk.cpp
+  GameObjectsDisplay.cpp
+  ObjectExplorer.cpp
+  Bindings.cpp
+  D3D11Component.cpp
+  D3D12Component.cpp
+  OverlayComponent.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_win32.cpp
+  Application.cpp
+  MurmurHash.cpp
+  REContext.cpp
+  REGlobals.cpp
+  REManagedObject.cpp
+  RETransform.cpp
+  REType.cpp
+  RETypeDB.cpp
+  RETypeDefinition.cpp
+  RETypes.cpp
+  Renderer.cpp
+  ResourceManager.cpp
+  SceneManager.cpp
+  SystemArray.cpp
+  NativeObject.cpp
+  Address.cpp
+  Config.cpp
+  FunctionHook.cpp
+  Memory.cpp
+  Module.cpp
+  Patch.cpp
+  Pattern.cpp
+  PointerHook.cpp
+  Scan.cpp
+  String.cpp
+  Thread.cpp
+     Creating library C:/projects/reframework-dev/build/lib/RE2/dinput8.lib and object C:/projects/reframework-dev/build/lib/RE2/dinput8.exp
+  RE2.vcxproj -> C:\projects\reframework-dev\build\bin\RE2\dinput8.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  D3D11Hook.cpp
+  D3D12Hook.cpp
+  DInputHook.cpp
+  ExceptionHandler.cpp
+  HookManager.cpp
+  Main.cpp
+  Mods.cpp
+  REFramework.cpp
+  WindowsMessageHook.cpp
+  APIProxy.cpp
+  Camera.cpp
+  DeveloperTools.cpp
+  FirstPerson.cpp
+  FreeCam.cpp
+  Hooks.cpp
+  IntegrityCheckBypass.cpp
+  ManualFlashlight.cpp
+  PluginLoader.cpp
+  REFrameworkConfig.cpp
+  Scene.cpp
+  ScriptRunner.cpp
+  VR.cpp
+  FS.cpp
+  ImGui.cpp
+  Json.cpp
+  Sdk.cpp
+  GameObjectsDisplay.cpp
+  ObjectExplorer.cpp
+  Bindings.cpp
+  D3D11Component.cpp
+  D3D12Component.cpp
+  OverlayComponent.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_win32.cpp
+  Application.cpp
+  MurmurHash.cpp
+  REContext.cpp
+  REGlobals.cpp
+  REManagedObject.cpp
+  RETransform.cpp
+  REType.cpp
+  RETypeDB.cpp
+  RETypeDefinition.cpp
+  RETypes.cpp
+  Renderer.cpp
+  ResourceManager.cpp
+  SceneManager.cpp
+  SystemArray.cpp
+  NativeObject.cpp
+  Address.cpp
+  Config.cpp
+  FunctionHook.cpp
+  Memory.cpp
+  Module.cpp
+  Patch.cpp
+  Pattern.cpp
+  PointerHook.cpp
+  Scan.cpp
+  String.cpp
+  Thread.cpp
+     Creating library C:/projects/reframework-dev/build/lib/RE3/dinput8.lib and object C:/projects/reframework-dev/build/lib/RE3/dinput8.exp
+  RE3.vcxproj -> C:\projects\reframework-dev\build\bin\RE3\dinput8.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  D3D11Hook.cpp
+  D3D12Hook.cpp
+  DInputHook.cpp
+  ExceptionHandler.cpp
+  HookManager.cpp
+  Main.cpp
+  Mods.cpp
+  REFramework.cpp
+  WindowsMessageHook.cpp
+  APIProxy.cpp
+  Camera.cpp
+  DeveloperTools.cpp
+  FirstPerson.cpp
+  FreeCam.cpp
+  Hooks.cpp
+  IntegrityCheckBypass.cpp
+  ManualFlashlight.cpp
+  PluginLoader.cpp
+  REFrameworkConfig.cpp
+  Scene.cpp
+  ScriptRunner.cpp
+  VR.cpp
+  FS.cpp
+  ImGui.cpp
+  Json.cpp
+  Sdk.cpp
+  GameObjectsDisplay.cpp
+  ObjectExplorer.cpp
+  Bindings.cpp
+  D3D11Component.cpp
+  D3D12Component.cpp
+  OverlayComponent.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_win32.cpp
+  Application.cpp
+  MurmurHash.cpp
+  REContext.cpp
+  REGlobals.cpp
+  REManagedObject.cpp
+  RETransform.cpp
+  REType.cpp
+  RETypeDB.cpp
+  RETypeDefinition.cpp
+  RETypes.cpp
+  Renderer.cpp
+  ResourceManager.cpp
+  SceneManager.cpp
+  SystemArray.cpp
+  NativeObject.cpp
+  Address.cpp
+  Config.cpp
+  FunctionHook.cpp
+  Memory.cpp
+  Module.cpp
+  Patch.cpp
+  Pattern.cpp
+  PointerHook.cpp
+  Scan.cpp
+  String.cpp
+  Thread.cpp
+     Creating library C:/projects/reframework-dev/build/lib/RE7/dinput8.lib and object C:/projects/reframework-dev/build/lib/RE7/dinput8.exp
+  RE7.vcxproj -> C:\projects\reframework-dev\build\bin\RE7\dinput8.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  D3D11Hook.cpp
+  D3D12Hook.cpp
+  DInputHook.cpp
+  ExceptionHandler.cpp
+  HookManager.cpp
+  Main.cpp
+  Mods.cpp
+  REFramework.cpp
+  WindowsMessageHook.cpp
+  APIProxy.cpp
+  Camera.cpp
+  DeveloperTools.cpp
+  FirstPerson.cpp
+  FreeCam.cpp
+  Hooks.cpp
+  IntegrityCheckBypass.cpp
+  ManualFlashlight.cpp
+  PluginLoader.cpp
+  REFrameworkConfig.cpp
+  Scene.cpp
+  ScriptRunner.cpp
+  VR.cpp
+  FS.cpp
+  ImGui.cpp
+  Json.cpp
+  Sdk.cpp
+  GameObjectsDisplay.cpp
+  ObjectExplorer.cpp
+  Bindings.cpp
+  D3D11Component.cpp
+  D3D12Component.cpp
+  OverlayComponent.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_win32.cpp
+  Application.cpp
+  MurmurHash.cpp
+  REContext.cpp
+  REGlobals.cpp
+  REManagedObject.cpp
+  RETransform.cpp
+  REType.cpp
+  RETypeDB.cpp
+  RETypeDefinition.cpp
+  RETypes.cpp
+  Renderer.cpp
+  ResourceManager.cpp
+  SceneManager.cpp
+  SystemArray.cpp
+  NativeObject.cpp
+  Address.cpp
+  Config.cpp
+  FunctionHook.cpp
+  Memory.cpp
+  Module.cpp
+  Patch.cpp
+  Pattern.cpp
+  PointerHook.cpp
+  Scan.cpp
+  String.cpp
+  Thread.cpp
+     Creating library C:/projects/reframework-dev/build/lib/RE8/dinput8.lib and object C:/projects/reframework-dev/build/lib/RE8/dinput8.exp
+  RE8.vcxproj -> C:\projects\reframework-dev\build\bin\RE8\dinput8.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  Plugin.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_win32.cpp
+  d3d11.cpp
+  d3d12.cpp
+     Creating library C:/projects/reframework-dev/build/lib/example_plugin/example_plugin.lib and object C:/projects/reframework-dev/build/lib/example_plugin/example_plugin.exp
+  example_plugin.vcxproj -> C:\projects\reframework-dev\build\bin\example_plugin\example_plugin.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+  weapon_stay_big.cpp
+     Creating library C:/projects/reframework-dev/build/lib/weapon_stay_big_plugin/weapon_stay_big_plugin.lib and object C:/projects/reframework-dev/build/lib/weapon_stay_big_plugin/weapon_stay_big_plugin.exp
+  weapon_stay_big_plugin.vcxproj -> C:\projects\reframework-dev\build\bin\weapon_stay_big_plugin\weapon_stay_big_plugin.dll
+  Building Custom Rule C:/projects/reframework-dev/CMakeLists.txt
+7z a RE2.zip %APPVEYOR_BUILD_FOLDER%/build/bin/RE2/dinput8.dll
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+Scanning the drive:
+1 file, 4318720 bytes (4218 KiB)
+Creating archive: RE2.zip
+Add new data to archive: 1 file, 4318720 bytes (4218 KiB)
+Files read from disk: 1
+Archive size: 1512096 bytes (1477 KiB)
+Everything is Ok
+7z a RE3.zip %APPVEYOR_BUILD_FOLDER%/build/bin/RE3/dinput8.dll
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+Scanning the drive:
+1 file, 4320768 bytes (4220 KiB)
+Creating archive: RE3.zip
+Add new data to archive: 1 file, 4320768 bytes (4220 KiB)
+Files read from disk: 1
+Archive size: 1512947 bytes (1478 KiB)
+Everything is Ok
+7z a RE8.zip %APPVEYOR_BUILD_FOLDER%/build/bin/RE8/dinput8.dll
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+Scanning the drive:
+1 file, 4220928 bytes (4122 KiB)
+Creating archive: RE8.zip
+Add new data to archive: 1 file, 4220928 bytes (4122 KiB)
+Files read from disk: 1
+Archive size: 1471401 bytes (1437 KiB)
+Everything is Ok
+7z a DMC5.zip %APPVEYOR_BUILD_FOLDER%/build/bin/DMC5/dinput8.dll
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+Scanning the drive:
+1 file, 4194304 bytes (4096 KiB)
+Creating archive: DMC5.zip
+Add new data to archive: 1 file, 4194304 bytes (4096 KiB)
+Files read from disk: 1
+Archive size: 1462301 bytes (1429 KiB)
+Everything is Ok
+7z a RE7.zip %APPVEYOR_BUILD_FOLDER%/build/bin/RE7/dinput8.dll
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+Scanning the drive:
+1 file, 4231680 bytes (4133 KiB)
+Creating archive: RE7.zip
+Add new data to archive: 1 file, 4231680 bytes (4133 KiB)
+Files read from disk: 1
+Archive size: 1455621 bytes (1422 KiB)
+Everything is Ok
+7z a MHRISE.zip %APPVEYOR_BUILD_FOLDER%/build/bin/MHRISE/dinput8.dll
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+Scanning the drive:
+1 file, 4203520 bytes (4105 KiB)
+Creating archive: MHRISE.zip
+Add new data to archive: 1 file, 4203520 bytes (4105 KiB)
+Files read from disk: 1
+Archive size: 1466077 bytes (1432 KiB)
+Everything is Ok
+Discovering tests...OK
+Collecting artifacts...
+Found artifact 'DMC5.zip' matching 'DMC5.zip' path
+Found artifact 'MHRISE.zip' matching 'MHRISE.zip' path
+Found artifact 'RE2.zip' matching 'RE2.zip' path
+Found artifact 'RE3.zip' matching 'RE3.zip' path
+Found artifact 'RE7.zip' matching 'RE7.ZIP' path
+Found artifact 'RE8.zip' matching 'RE8.zip' path
+Uploading artifacts...
+[1/6] DMC5.zip (1,462,301 bytes)...100%
+[2/6] MHRISE.zip (1,466,077 bytes)...100%
+[3/6] RE2.zip (1,512,096 bytes)...100%
+[4/6] RE3.zip (1,512,947 bytes)...100%
+[5/6] RE7.zip (1,455,621 bytes)...100%
+[6/6] RE8.zip (1,471,401 bytes)...100%
+Deploying using GitHub provider
+Creating "1.1.219" release for repository "praydog/REFramework-nightly" tag "1.1.219"...OK
+Uploading "DMC5.zip" to release assets...OK
+Uploading "MHRISE.zip" to release assets...OK
+Uploading "RE2.zip" to release assets...OK
+Uploading "RE3.zip" to release assets...OK
+Uploading "RE7.zip" to release assets...OK
+Uploading "RE8.zip" to release assets...OK
+Updating "1.1.219" release for repository "praydog/REFramework-nightly" tag "1.1.219"...OK
+Build success
